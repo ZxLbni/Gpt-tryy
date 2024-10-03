@@ -120,7 +120,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await context.bot.send_message(chat_id, "🔄 *Processing your link...*")
     try:
-        response = requests.get(f'https://tera.ronok.workers.dev/?link={text}&apikey=0b010c132e2cbd862cbd8a6ae430dd51d3a0d5ea')
+        response = requests.get(f'https://tera.ronok.workers.dev/?link={text}&apikey=45f4ed14a9e10627e5697301507c1363b03ef82a')
         download_url = response.json().get('url')
 
         await context.bot.send_photo(chat_id, 'https://i.ibb.co/RhccGh9/7ec413813c52.jpg', caption="""
