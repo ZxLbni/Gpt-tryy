@@ -39,13 +39,13 @@ async def check_subscription(chat_id, application):
         return False
 
 async def send_start_message(chat_id, application):
-    await application.bot.send_photo(chat_id, 'https://i.imgur.com/6cUMqLc.jpeg', caption="""
+    await application.bot.send_photo(chat_id, 'https://i.ibb.co/RhccGh9/7ec413813c52.jpg', caption="""
     👋 *Welcome to TeraBox Video Player Bot!*\n\n
     *Paste your TeraBox link and watch your video instantly—no TeraBox app needed!*\n\n
-    Please subscribe to our [Updates Channel](https://t.me/Opleech_WD) and click /start again to begin using the bot.
+    Please subscribe to our [Updates Channel](https://t.me/NOOBPrivate) and click /start again to begin using the bot.
     """, parse_mode='Markdown', reply_markup=InlineKeyboardMarkup([[
-        InlineKeyboardButton('Join Channel to Use Me', url='https://t.me/Opleech_WD'),
-        InlineKeyboardButton('How to use Bot', url='https://t.me/WOODcraft_Mirror_Zone/43')
+        InlineKeyboardButton('Join Channel to Use Me', url='https://t.me/NOOBPrivate'),
+        InlineKeyboardButton('How to use Bot', url='https://t.me/NOOBX_xBot?start=getFile-1426_SoxlF2VivnV4ptlX')
     ]]))
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -53,10 +53,10 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     is_subscribed = await check_subscription(chat_id, context.application)
 
     if is_subscribed:
-        await context.bot.send_photo(chat_id, 'https://i.imgur.com/rzorSxY.jpeg', caption="""
+        await context.bot.send_photo(chat_id, 'https://i.ibb.co/RhccGh9/7ec413813c52.jpg', caption="""
         🎉 *Welcome back!* 😊\n\n*Send a TeraBox link to watch or download your video.* 🍿
         """, parse_mode='Markdown', reply_markup=InlineKeyboardMarkup([[
-            InlineKeyboardButton("Any Help?", url="https://t.me/+XfmrBSzTyRFlZTI9")
+            InlineKeyboardButton("Any Help?", url="https://t.me/NOOBPrivateChats")
         ]]))
     else:
         await send_start_message(chat_id, context.application)
@@ -70,7 +70,7 @@ async def stat(update: Update, context: ContextTypes.DEFAULT_TYPE):
             {'$count': 'count'}
         ]).next()['count']
 
-        await context.bot.send_photo(chat_id, 'https://i.imgur.com/H91ehBY.jpeg', caption=f"""
+        await context.bot.send_photo(chat_id, 'https://i.ibb.co/RhccGh9/7ec413813c52.jpg', caption=f"""
         📊 *Current Bot Stats:*\n\n
         👥 *Total Users:* {user_count}\n
         🔗 *Links Processed:* {link_count}
@@ -120,7 +120,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         response = requests.get(f'https://tera.ronok.workers.dev/?link={text}&apikey=0b010c132e2cbd862cbd8a6ae430dd51d3a0d5ea')
         download_url = response.json().get('url')
 
-        await context.bot.send_photo(chat_id, 'https://i.imgur.com/rzorSxY.jpeg', caption="""
+        await context.bot.send_photo(chat_id, 'https://i.ibb.co/RhccGh9/7ec413813c52.jpg', caption="""
         ✅ *Your video is ready!*\n\n📥 *Click the button below to view or download it.*
         """, parse_mode='Markdown', reply_markup=InlineKeyboardMarkup([[
             InlineKeyboardButton('ᢱ Watch/Download ⎙', url=download_url)
