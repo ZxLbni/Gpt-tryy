@@ -15,7 +15,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 3000
 
 # Define environment variable
-ENV NAME TeraBoxBot
+ENV TeraBoxBot
 
 # Run the bot when the container launches
 CMD ["python", "bot.py"]
